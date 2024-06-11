@@ -6,6 +6,9 @@ const isProtectedRoute = createRouteMatcher([
 ]);
 
 export default clerkMiddleware((auth, request) => {
+  publicRoutes: ["/api/:path*"];
+
+
   if (isProtectedRoute(request)){
     auth().protect();
   }
