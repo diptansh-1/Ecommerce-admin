@@ -80,3 +80,28 @@ body,
       @apply bg-background text-foreground;
     }
   }
+
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -6px;
+  left: 50%;
+  background-color: #FF8036;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 0 0 10px 10px;
+}
+
+.nav-link-active::after {
+  width: 100%;
+}
+
+

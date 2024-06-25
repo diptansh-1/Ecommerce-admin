@@ -32,5 +32,16 @@ export const columns: ColumnDef<OrderColumn>[] = [
   {
     accessorKey: "isPaid",
     header: "Paid",
+    cell: ({ row }) => (
+      <span
+        className={`inline-block w-20 text-center px-2 py-1 rounded ${
+          row.original.isPaid
+            ? "bg-green-100 text-green-700"
+            : "bg-red-100 text-red-700"
+        }`}
+      >
+        {row.original.isPaid ? "true" : "false"}
+      </span>
+    ),
   },
 ]
